@@ -24,6 +24,39 @@
   		});
 	</script>
 
+	<h1>Hora y Ubicación del Usuario</h1>
+
+    <p>La hora actual es: <span id="hora"></span></p>
+    <p>Tu ubicación es: <span id="ubicacion"></span></p>
+
+    <script>
+        // Función para mostrar la hora actual
+        function mostrarHora() {
+            const fecha = new Date();
+            const hora = fecha.getHours();
+            const minutos = fecha.getMinutes();
+            const segundos = fecha.getSeconds();
+            const horaActual = hora + ":" + minutos + ":" + segundos;
+            document.getElementById("hora").textContent = horaActual;
+        }
+
+        // Función para obtener la ubicación del usuario
+        function obtenerUbicacion() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const ubicacion = "Latitud: " + position.coords.latitude + ", Longitud: " + position.coords.longitude;
+                    document.getElementById("ubicacion").textContent = ubicacion;
+                });
+            } else {
+                document.getElementById("ubicacion").textContent = "La geolocalización no está disponible en este navegador.";
+            }
+        }
+
+        // Llamar a las funciones para mostrar la hora y obtener la ubicación
+        mostrarHora();
+        obtenerUbicacion();
+    </script>    
+
 
 </body>
 </html>
