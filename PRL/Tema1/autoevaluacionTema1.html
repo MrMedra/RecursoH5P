@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<h1>Autoevaluación Tema 1</h1>
+
+	<div id="h5p-container"></div>
+	<script type="text/javascript">
+  		const {
+   			 H5P
+ 		} = H5PStandalone;
+  		
+  		new H5P(document.getElementById('h5p-container'), {
+    		h5pJsonPath: 'AutoevaluacionTema1',
+    		frameJs: './dist/frame.bundle.js',
+    		frameCss: './dist/styles/h5p.css'
+  		});
+
+</body>
+</html>
